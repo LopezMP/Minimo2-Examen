@@ -25,7 +25,6 @@ public class ListActivity extends AppCompatActivity {
     private Api api;
 
     private DelayedProgressDialog loader;
-    private List<Element> elementList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +47,11 @@ public class ListActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     loader = new DelayedProgressDialog();
                     loader.show(getSupportFragmentManager(), "tag");
-                   Museums museums = response.body();
+                    Museums museums = response.body();
                     recyclerAdapter = new MyAdapter(getApplicationContext(), museums.getElements());
                     recyclerView.setAdapter(recyclerAdapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    loader.cancel();
+
                 }
                 else{
                     Context context = getApplicationContext();
@@ -65,8 +64,13 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Museums> call, Throwable t) {
-
+                Context context = getApplicationContext();
+                int duration = Toast.LENGTH_LONG;
+                CharSequence text = t.getMessage();
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         });
+        loader.cancel();
     }
 }

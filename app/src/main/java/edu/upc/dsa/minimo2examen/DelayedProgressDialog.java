@@ -17,9 +17,9 @@ import android.widget.ProgressBar;
 
 public class DelayedProgressDialog extends DialogFragment {
 
-    private static final int DELAY_MILLISECOND = 450;
+    private static final int DELAY_MILLISECOND = 1;
 
-    private static final int MINIMUM_SHOW_DURATION_MILLISECOND = 300;
+    private static final int MINIMUM_SHOW_DURATION_MILLISECOND = 1500;
 
     private static final int PROGRESS_CONTENT_SIZE_DP = 80;
 
