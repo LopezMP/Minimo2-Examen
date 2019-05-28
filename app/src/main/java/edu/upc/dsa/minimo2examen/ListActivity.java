@@ -51,7 +51,7 @@ public class ListActivity extends AppCompatActivity {
                     recyclerAdapter = new MyAdapter(getApplicationContext(), museums.getElements());
                     recyclerView.setAdapter(recyclerAdapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-
+                    loader.cancel();
                 }
                 else{
                     Context context = getApplicationContext();
@@ -71,6 +71,6 @@ public class ListActivity extends AppCompatActivity {
                 toast.show();
             }
         });
-        loader.cancel();
+
     }
 }
