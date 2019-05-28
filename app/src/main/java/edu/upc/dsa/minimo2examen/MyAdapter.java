@@ -26,7 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.elementsList = elementsList;
     }
 
-    public void setUserList(List<Element> elementsList) {
+    public void setElementsList(List<Element> elementsList) {
         this.elementsList = elementsList;
         notifyDataSetChanged();
     }
@@ -41,7 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder myViewHolder, final int i) {
 
-            Picasso.with(context).load(elementsList.get(i).getImatge().get(1)).into(myViewHolder.imageView2);
+            Picasso.with(context).load(elementsList.get(i).getImatge().get(0)).into(myViewHolder.imageView2);
 
             myViewHolder.txtname.setText(elementsList.get(i).getAdrecaNom());
             myViewHolder.txtDescription.setText(elementsList.get(i).getDescripcio());

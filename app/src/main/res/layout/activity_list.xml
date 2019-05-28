@@ -7,8 +7,9 @@
     tools:context=".ListActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="395dp"
-        android:layout_height="715dp"
+        android:id="@+id/recycler_view"
+        android:layout_width="393dp"
+        android:layout_height="685dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp" />
 </android.support.constraint.ConstraintLayout>
